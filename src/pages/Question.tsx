@@ -1,6 +1,8 @@
 import React, { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import Hearts from '../components/hearts'
+
 // https://docs.google.com/forms/u/0/d/e/1FAIpQLSf7JxkeTsGxhxr2BVWLEnkyvmfeJrVsQsqTq7yKzhOcCysrQA/formResponse
 
 // entry.354685551=action
@@ -26,8 +28,7 @@ function Question(): React.ReactElement {
         'Я не могу без тебя 😭',
         'Я обещаю быть лучшим 🌟',
         'Пожалуйста не отказывай мне 🙏',
-        'Я не могу без тебя, ты моя любовь! 😘',
-        ''
+        'Я не могу без тебя, ты моя любовь! 😘'
     ]
 
     const changeNoText = (): void => {
@@ -35,7 +36,7 @@ function Question(): React.ReactElement {
             setNoText(prev => {
                 const currentIndex = Math.max(noTexts.indexOf(prev), 0);
                 const nextIndex = currentIndex + 1;
-                if (noTexts[nextIndex] === '') {
+                if (nextIndex >= noTexts.length) {
                     noBtnRef.current!.style.display = 'none';
                     yesBtnRef.current!.classList.add('big');
                 }
@@ -45,9 +46,7 @@ function Question(): React.ReactElement {
     }
 
     const clickYesBtn = (): void => {
-        sendData(); // send data to google forms
-
-        navigate('/thank'); // navigate to thank you page
+        sendData().then(() => navigate('/thank')); // игнорируем результат
         return;
     }
 
@@ -55,13 +54,11 @@ function Question(): React.ReactElement {
         setCount(count + 1);
         changeNoText()
         if (yesBtnRef.current && noBtnRef.current) {
-            const currSize = Number(yesBtnRef.current.style.getPropertyValue('--size') ?? 1);
-            const newSize = currSize + 1;
-            setSize(newSize);
+            setSize(prev => prev + 1);
         }
     }
 
-    const sendData = (): void => {
+    const sendData = async (): Promise<void> => {
         fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSf7JxkeTsGxhxr2BVWLEnkyvmfeJrVsQsqTq7yKzhOcCysrQA/formResponse', {
             method: 'POST',
             mode: 'no-cors',
@@ -74,6 +71,7 @@ function Question(): React.ReactElement {
                 'entry.951999096': new Date().toISOString(), // time
             }),
         });
+        return;
     }
 
     return (
@@ -93,6 +91,8 @@ function Question(): React.ReactElement {
                 </div>
             </div>
             <p className="author">Сделано с 💗 от Кости для Ники</p>
+
+            <Hearts number={3} />
         </main>
     )
 }

@@ -5,6 +5,7 @@
     --text-color: #333;
     --button-bg-color: #ff4d6d;
     --button-text-color: #fff;
+    --button-no-bg-color: #f44336; /* red для "No" */
 }
 
 * {

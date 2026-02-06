@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import Hearts from '../components/hearts'
+
 function Question(): React.ReactElement {
     return (
         <main className="HomePage">
@@ -20,6 +22,8 @@ function Question(): React.ReactElement {
             </div>
 
             <p className="author">Сделано с 💗 от Кости для Ники</p>
+
+            <Hearts number={(Math.random() * 5 + 15)} /> {/* от 15 до 20 */}
         </main>
     )
 }
