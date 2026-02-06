@@ -16,12 +16,15 @@ function App(): React.ReactElement {
     }
   });
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/question" element={<Question />} />
-      <Route path="/thank" element={<Thank />} />
-      <Route path="*" element={<Home />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/question" element={<Question />} />
+        <Route path="/thank" element={<Thank />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+      <p className="author">Сделано с <span className="heart">♥</span> от Кости для Ники</p>
+    </>
   );
 }
 

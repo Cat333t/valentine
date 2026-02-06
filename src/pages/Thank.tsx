@@ -26,9 +26,6 @@ function Question(): React.ReactElement {
 
                 <Link to='/' className="homeLink">Вернуться</Link>
             </div>
-
-            <p className="author">Сделано с 💗 от Кости для Ники</p>
-
             <Hearts number={(Math.random() * 5 + 15)} /> {/* от 15 до 20 сердечек */}
         </main>
     )

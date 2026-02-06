@@ -90,8 +90,6 @@ function Question(): React.ReactElement {
                     <button onClick={clickNoBtn} id="noBtn" ref={noBtnRef}>{noText || 'Нет 😢'}</button>
                 </div>
             </div>
-            <p className="author">Сделано с 💗 от Кости для Ники</p>
-
             <Hearts number={3} />
         </main>
     )

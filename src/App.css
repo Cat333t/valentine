@@ -14,15 +14,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-}
-
-.App h1 {
-    font-size: 2rem;
-    color: var(--text-color);
-    text-align: center;
-    text-wrap: balance;
-    z-index: 2;
+    gap: 30px;
 }
 
 .buttons {
@@ -31,7 +23,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 70px;
     width: 100%;
     /* max-width: 100dvw; */
 }
@@ -44,6 +36,8 @@
     width: fit-content;
     color: var(--button-text-color);
     background-color: var(--button-bg-color);
+    font-family: 'Caveat', cursive;
+    font-weight: 1000;
     border: none;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -107,7 +101,7 @@
 .ThankPage h1,
 .HomePage h1 {
     font-size: 1.7rem;
-    color: var(--text-color);
+    color: #ff6584;
     text-align: center;
     text-wrap: balance;
 }
@@ -132,10 +126,23 @@
 }
 
 .author {
+    display: block;
     position: absolute;
     bottom: 12px;
-    font-size: 1rem !important;
-    opacity: 0.6;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem !important;
+    font-family: 'Caveat', cursive;
+    color: var(--text-color);
+    text-align: center;
+    width: 100%;
+    opacity: 0.5;
+}
+
+.author .heart {
+    color: gray;
+    font-size: 1.5rem;
+    font-weight: 1000;
 }
 
 .homeLink {
@@ -164,6 +171,8 @@
     height: 50px;
     z-index: -1;
     opacity: 0.8;
+    user-select: none;
+    pointer-events: none;
     animation: float 5s ease-in-out infinite;
 }
 
