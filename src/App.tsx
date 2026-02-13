@@ -24,7 +24,7 @@ function App(): React.ReactElement {
                 <Route path="/thank" element={<Thank />} />
                 <Route path="*" element={<Home />} />
             </Routes>
-            <p className="author">Сделано с <span className="heart">♥</span> от Кости для Ники</p>
+            <p className="author">Сделано с <span className="heart"></span> от Кости для Ники</p>
         </>
     );
 }

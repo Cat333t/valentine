@@ -16,7 +16,7 @@ function Question(): React.ReactElement {
     return (
         <main className="ThankPage">
             <div className="container">
-                <img src="/peach.gif" className='gif' />
+                <img src="/peach.gif" className='gif' alt=" " width="40%" />
 
                 <h1>Спасибо, моя любимая! ❤️</h1>
 
