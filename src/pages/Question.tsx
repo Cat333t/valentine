@@ -65,6 +65,7 @@ function Question(): React.ReactElement {
     }
 
     const clickYesBtn = (): void => {
+        localStorage.setItem('agreed', 'true');
         sendData().then(() => navigate('/thank'));
         return;
     }
