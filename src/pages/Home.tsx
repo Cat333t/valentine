@@ -7,7 +7,7 @@ function Question(): React.ReactElement {
     return (
         <main className="HomePage">
             <div className="container">
-                <img src="/peach2.gif" className='gif' />
+                <img src="/peach2.gif" className='gif' alt=" " width="40%" />
 
                 <h1>С 14 февраля моя любимая! ❤️</h1>
 
