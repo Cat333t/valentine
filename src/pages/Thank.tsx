@@ -32,8 +32,6 @@ function Question(): React.ReactElement {
                         Я очень старался когда делал этот сайтик, надеюсь тебе понравится.
                     </p>
                 </div>
-
-                <Link to='/' className="link-btn">Вернуться</Link>
             </div>
             <Hearts number={(Math.random() * 5 + 15)} /> {/* от 15 до 20 сердечек */}
         </main>
